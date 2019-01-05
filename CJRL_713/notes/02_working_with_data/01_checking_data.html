@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title> Checking data |  The Globe and Mail</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/assets/main-44cf6a473d9b9f7417bbc1387e2aa18a.css"> -->
+	<!-- <link rel="stylesheet" href="twitter.com/JessieWillms/assets/main.css"> -->
+	<!-- <link rel="stylesheet" href="https://www.theglobeandmail.com/files/editorial/data-training/assets/main.css"> -->
+    <!-- <link rel="stylesheet" href="/assets/idea.min-6dcad66f4df0b6ca93d206c8571c65b2.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style media="screen">
+	.tbls tbody td:nth-of-type(1) {
+		width: 40%;
+	}
+	.tbls tbody td:nth-of-type(2) {
+		width: 60%;
+	}
+	</style>
+
+	<link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="canonical" href="twitter.com/JessieWillms/02_working_with_data/01_checking_data.html">
+  <link rel="alternate" type="application/rss+xml" title="Interactive & Data Journalism" href="twitter.com/JessieWillms/feed.xml" />
+</head>
+<body>
+
+<header class="site-header">
+  <!-- <div class="stickNav">
+    <h1 class="site-title">The Globe and Mail</h1>
+  </div> -->
+  <div class="wrapper">
+    <div class="container">
+      <h3>
+        <a href="/">Interactive & Data Journalism</a>
+        <!-- <a href="twitter.com/JessieWillmsdata-training/index.html">Interactive & Data Journalism</a> -->
+      </h3>
+      <h2>Checking data</h2>
+    </div>
+  </div>
+</header>
+
+
+<div class="back-link">
+  <a href="/" class="toc">&#9664; Table of contents</a>
+</div>
+
+
+
+<style>
+
+</style>
+
+<div class="wrapper">
+	<section class="lesson markdown-body">
+<p><a href="/02_working_with_data/02_cleaning_data.html">Refer to next lessons for cleaning data</a></p>
+
+<h1 id="checking-data">Checking data</h1>
+
+<p>Download all the data used in these examples: <a href="exercises/data_working_with_data.zip" class="exercise"><strong>data_working_with_data.zip</strong></a></p>
+
+<h3 id="a-quick-scan-of-the-dataset-">A quick scan of the dataset –</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Questions to ask your data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Are there missing or truncated values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Are there out of range values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Look at all the values that appear in a column/row – do they make sense?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Are there similar repeated values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Is the data format what you’d expect for the data type?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">How was the data collected? Is it from a survey (survey – online survey vs. phone calls)?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">How was the data verified? If data is entered by hand by a human person, how was it verified?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">When was the data collected?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">What is the gap between being collected and published? ie., there will always be a lag between when census data is collected from Canadians and when it is made available (to download/access)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="check-for-skewed-data">Check for skewed data</h3>
+
+<ul>
+  <li><strong>Inflation</strong></li>
+  <li>Currency inflation means that over time money changes in value</li>
+  <li>Check with the source of the data to see if the numbers are adjusted</li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Housing prices since the 1950s</strong><br /> Wow! Homes got expensive! Adjusted for inflation, the 1950 home was $44,600. Still a big spike, but less drastic (and other factors, like the size of homes changing, can help explain this change).</td>
+      <td style="text-align: left"><img src="img/checking-data-check-for-inflation.png" alt="Inflation" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/median_housing_price.csv" class="exercise"><strong>median_housing_price.csv</strong></a></small></p>
+
+<ul>
+  <li><strong>Seasonal variation</strong></li>
+  <li>Many types of data fluctuate naturally due to some underlying forces.
+    <ul>
+      <li>for example: employment fluctuating with the seasons (ie., around the Christmas season, or summer months)</li>
+      <li>check if the data has been “seasonally adjusted”</li>
+    </ul>
+  </li>
+  <li><strong>Timeframe or frame of reference has been manipulated</strong></li>
+  <li>Is</li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>MTV’s Teen Mom vs. teen birth rate</strong><br /> Teen Mom aired its first season in the summer of 2009. The following year the teen birth rate dropped 3.6%, and the rate continued to drop every year following — is an MTV reality television to thank for this drop in teen pregnancy?</td>
+      <td style="text-align: left"><img src="img/checking-data-unclear.png" alt="Spelling" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/teen_pregnancy.csv" class="exercise"><strong>teen_pregnancy.csv</strong></a></small></p>
+
+<h3 id="check-for-missing-values-or-zerosarbitrary-values-replace-missing-values">Check for missing values or zeros/arbitrary values replace missing values</h3>
+
+<ul>
+  <li><strong>Blank / “null” values</strong>
+    <ul>
+      <li>Check for blank or “null” values</li>
+      <li>Confirm what blank or “null” values mean (ie., is the value unavailable, missing, etc.)</li>
+      <li>Data is <em>missing</em>
+        <ul>
+          <li>ie., if a dataset is supposed to be about “Canada,” check that all 10 provinces and 3 territories are reflected in the data</li>
+          <li>do a first pass on a dataset to make sure the data provided matches what you expected</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>When in doubt: Go back to the source of the data to confirm why a value is missing, zero (0), or null</li>
+</ul>
+
+<h3 id="check-for-units-categories-and-labels">Check for units, categories, and labels</h3>
+
+<ul>
+  <li><strong>Currency</strong>
+    <ul>
+      <li>Check if foreign prices may be specified in their local currency
+        <ul>
+          <li>ie., is you data in USD or CAD?</li>
+        </ul>
+      </li>
+      <li>What year is the dollar value from
+        <ul>
+          <li>ie., a $100 in 2010 is not $100 in 2019</li>
+          <li>Check for inflation, etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Categories</strong>
+    <ul>
+      <li>Bad categories can artificially exclude data.</li>
+      <li>For example: crime statistics. A bad or changing definition might mean a crime is counted in a different category than you expect or that it wasn’t counted at all.</li>
+    </ul>
+  </li>
+  <li><strong>Labels</strong>
+    <ul>
+      <li>Ambiguity = a likely error</li>
+      <li>Confirm with the source of the dataset your understanding matches their definitions
+        <ul>
+          <li>ie., is <code>residence</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Column labels are too broad or unclear</strong><br /> Both <code>earnings</code> and <code>dollars</code> are bad column headers. Once you divide the <code>dollars</code> value by the <code>shows_played_2101</code> value, it is clear that <code>dollars</code> refers to total earnings for the complete tour in 2018. The headers should be updated to reflect the content (the total per tour earning, and the per show earnings).</td>
+      <td style="text-align: left"><img src="img/checking-data-unclear.png" alt="Spelling" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/highest_grossing_tours_2018.csv" class="exercise"><strong>highest_grossing_tours_2018.csv</strong></a></small></p>
+
+<h3 id="check-for-inconsistencies">Check for inconsistencies</h3>
+
+<ul>
+  <li><strong>Spelling is inconsistent</strong>
+    <ul>
+      <li>Check that location/place names are consistent
+        <ul>
+          <li>ie., <code>Los Angelos</code> instead of <code>Los Angeles</code></li>
+        </ul>
+      </li>
+      <li>Check locations for inconsistent spelling, or inconsistent short forms/abbreviations
+        <ul>
+          <li>ie., both <code>Sault Sainte. Marie</code> and <code>Sault Ste. Marie</code></li>
+        </ul>
+      </li>
+      <li>Often indicates that the data was compiled by a human person, reason to be skeptical of the data</li>
+      <li>You will need to manually correct mistakes or otherwise account for them in your analysis and reporting</li>
+      <li><em>Be sure to document your changes</em></li>
+    </ul>
+  </li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Inconsistent place names</strong><br /> Here are three options for a city in Ontario. Which is correct?</td>
+      <td style="text-align: left"><img src="img/checking-data-multiple-spelling.png" alt="Spelling" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/place_names.csv" class="exercise"><strong>place_names.csv</strong></a></small></p>
+
+<ul>
+  <li><strong>Name order is inconsistent</strong>
+    <ul>
+      <li>Check that <code>first_name</code> and <code>last_name</code> are accurately reflect the content
+        <ul>
+          <li>ie., is ``</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Checking names</strong><br /> Can you spot the celebrity whose name is incorrectly entered?</td>
+      <td style="text-align: left"><img src="img/checking-data-names.png" alt="names" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/names.csv" class="exercise"><strong>names.csv</strong></a></small></p>
+
+<ul>
+  <li><strong>Date formats are inconsistent</strong>
+    <ul>
+      <li>Check that all dates are day/month/year or month/day/year</li>
+      <li>Check that dates use consistent year formats (ie., <code>2015</code> vs <code>15</code>)
+        <ul>
+          <li>ie., both <code>10/9/15</code> and <code>9/10/15</code> are valid date formats, but are they the same date?</li>
+        </ul>
+      </li>
+      <li>Where did the data originate? (European vs. American date formats). If you are unsure, check with the source.</li>
+    </ul>
+  </li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Checking dates</strong><br /> There are four different dates formats here. If the data was collected in Canada, which format should be used?</td>
+      <td style="text-align: left"><img src="img/checking-data-dates.png" alt="Spelling" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><a href="exercises/data_working_with_data/date_formats.csv" class="exercise"><strong>date_formats.csv</strong></a></small></p>
+
+<h3 id="check-for-numbers-as-text-and-text-as-numbers">Check for numbers as text and text as numbers</h3>
+<ul>
+  <li>Not all numerals are numbers</li>
+  <li>Spreadsheets programs often make the mistake of assuming numerals are numbers and stripping the leading zeros.
+    <ul>
+      <li>ie., New England zip codes almost always start with zero, i.e. <code>02901</code></li>
+      <li>Excel assumes it’s numeric and “helpfully” drops that leading zero, making the value inaccurate</li>
+    </ul>
+  </li>
+  <li>Good practice is to store numbers without formatting and to include supporting information in column names or metadata.</li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Checking numberical values</strong><br /> It looks like some of these number values are formatted incorrectly — check that it is a formatting error (and not something else)</td>
+      <td style="text-align: left"><img src="img/checking-data-numbers.png" alt="Numbers" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zeros-replace-missing-values--data-is-missing">Zeros replace missing values / data is missing</h3>
+<ul>
+  <li>If you see zeros in a series of numbers you should ask yourself if those values are really the number <code>0</code> or if they instead mean <code>"nothing"</code>. (<code>-1</code> is also sometimes used this way.)</li>
+</ul>
+
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Checking for zeros</strong><br /> Did Bruno Mars really make millions of dollars playing a negative number of shows?</td>
+      <td style="text-align: left"><img src="img/checking-data-zero.png" alt="Numbers" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="check-number-of-columns-and-rows">Check number of columns and rows</h3>
+<ul>
+  <li>Excel has (had) a maximum of 65,536 rows. If your dataset has 65,536 rows, you likely have a portion of the data. Go back to the source to confirm or request the full dataset.</li>
+  <li>Apple’s Numbers can only handle 255 columns. If 255 rows, you might only have a portion of the data. Go back to the source to confirm or request the full dataset.</li>
+</ul>
+
+<h3 id="check-for-these-suspicious-values">Check for these suspicious values</h3>
+<p>If you see any of these values in your data, treat them with an abundance of caution:</p>
+
+<p><strong>Numbers:</strong></p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/65535_%28number%29"><code>65,535</code></a></li>
+  <li><a href="https://en.wikipedia.org/wiki/255_%28number%29"><code>255</code></a></li>
+  <li><a href="https://en.wikipedia.org/wiki/2147483647_%28number%29"><code>2,147,483,647</code></a></li>
+  <li><a href="https://en.wikipedia.org/wiki/4294967295"><code>4,294,967,295</code></a></li>
+  <li><a href="https://en.wikipedia.org/wiki/555_%28telephone_number%29"><code>555-3485</code></a></li>
+  <li><code>99999</code> (or any other long sequence of 9’s)</li>
+  <li><code>00000</code> (or any other sequence of 0’s)</li>
+</ul>
+
+<p><strong>Dates:</strong></p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number"><code>1970-01-01T00:00:00Z</code></a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number"><code>1969-12-31T23:59:59Z</code></a></li>
+  <li><a href="#spreadsheet-has-dates-in-1900-1904-1969-or-1970"><code>January 1st, 1900</code></a></li>
+  <li><a href="#spreadsheet-has-dates-in-1900-1904-1969-or-1970"><code>January 1st, 1904</code></a></li>
+</ul>
+
+<p><strong>Spreadsheet has dates in 1900, 1904, 1969, or 1970</strong></p>
+
+<p>Excel’s default date from which it counts all other dates is <code>January 1st, 1900</code>, <em>unless</em> you’re using Excel on a Mac, in which case it’s <code>January 1st, 1904</code>. There are a variety of ways in which data in Excel can be entered or calculated incorrectly and end up as one of these two dates. If you spot them in your data, it’s probably an issue.</p>
+
+<p>Many databases and applications will often generate a date of <code>1970-01-01T00:00:00Z</code> or <code>1969-12-31T23:59:59Z</code> which is the <a href="https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number">Unix epoch for timestamps</a>. In other words this is what happens when a system tries to display an empty value or a <code>0</code> value as a date.</p>
+
+<p><strong>Locations:</strong></p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Null_Island"><code>0°00'00.0"N+0°00'00.0"E</code></a> or simply <a href="https://en.wikipedia.org/wiki/Null_Island"><code>0°N 0°E</code></a></li>
+  <li>US zip code <code>12345</code> (Schenectady, New York)</li>
+  <li>US zip code <code>90210</code> (Beverly Hills, CA)</li>
+</ul>
+
+<p>Each of these numbers has an indication of a particular error made by either a human or a computer. If you see them, ensure they actually mean what you think they mean!</p>
+
+<p><small><em>Note: Many of these tips are pulled from <a href="https://github.com/Quartz/bad-data-guide">Quartz’s Bad Data Guide.</a></em></small></p>
+
+<h4 id="more-on-checking-data">More on checking data</h4>
+
+<ul>
+  <li><small>🔗</small> <a href="https://github.com/Quartz/bad-data-guide">Quartz’s full Bad Data Guide</a></li>
+  <li><small>🔗</small> <a href="https://github.com/propublica/guides/blob/master/data-bulletproofing.md">ProPublica’s Bulletproofing Your Data Guide</a></li>
+</ul>
+
+<h1 id="exercise">Exercise</h1>
+
+<p>To practice checking data, download this CSV: <a href="exercises/ufos.csv" class="exercise"><strong>ufos.csv</strong></a></p>
+
+<ul>
+  <li><small>🔗</small> Complete the worksheet <a href="https://docs.google.com/document/d/1jCxkZClneJVc7-syMhC4G7LoJO8oh09jtZwehdwgu-I/edit?usp=sharing">Bulletproofing your data</a></li>
+</ul>
+
+<h2 id="review">Review</h2>
+<ol>
+  <li>Which city spelling is correct?
+    <ul>
+      <li><span class="hide">St. Catharines is the accurate spelling</span></li>
+    </ul>
+  </li>
+  <li>Which celebrity name is incorrectly entered?
+    <ul>
+      <li><span class="hide">Elizabeth Taylor NOT Taylor Elizabeth</span></li>
+    </ul>
+  </li>
+  <li>For date data was collected in Canada, which date format should be used?
+    <ul>
+      <li><span class="hide">DAY-MONTH-YEAR (????) TK - Globe format is tK TK TK </span></li>
+    </ul>
+  </li>
+  <li>For the tour data, what should the column headers be updated to say?
+    <ul>
+      <li><span class="hide">total_tour_earnings and earnings_per_show</span></li>
+    </ul>
+  </li>
+  <li>Is Teen Mom responsible for the drop in teen pregnancy between 2008 and 2016?
+    <ul>
+      <li><span class="hide">No, if you take a more broader historical view of the data, you can see the teen pregnancy rate was (more or less) dropping since 1990.</span></li>
+    </ul>
+  </li>
+</ol>
+
+	</section>
+</div>
+<footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footerCont">
+      <h3 class="footer-heading">Interactive & Data Journalism</h3>
+      <ul class="contact-list">
+        
+            <li>
+                <strong>Contact me:</strong>
+                <a href="mailto:jwillms@my.centennialcollege.ca?subject=notes">jwillms@my.centennialcollege.ca</a>
+            </li>
+        
+        
+        <li>
+            <a href="https://twitter.com/JessieWillms">@JessieWillms</a>
+        </li>
+        
+      </ul>
+
+        <div class="clearfix">
+        <div class="half-wrapper">
+            <p class="text" style="margin-top:0;">Copyright Jessie Willms / Centennial College
+</p>
+            <small>Notes developed Jessie Willms for Centennial College</small>
+        </div>
+        <div class="half-wrapper">
+            <img src="assets/JW_logo.svg" style="max-width:100px; float:right;" alt="">
+        </div>
+        </div>
+
+
+        <br>
+        <br>
+    </div>
+
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/assets/highlight.min-fb9e5b69ffb15bd46fe104224a530c4f.js"></script>
+<script src="/assets/app-23b3b230a717622ee901b91eaa8647e8.js"></script>
+
+
+
+
+</body>
+</html>
