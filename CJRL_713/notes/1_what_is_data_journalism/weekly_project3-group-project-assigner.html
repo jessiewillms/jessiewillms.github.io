@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project 4 Assigner</title>
+	<style>
+	body {
+		font-family: "Helvetica";
+		font-size: 20px;
+	}
+
+	.wrapper {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	.group {
+		float: left;
+		width: 50%;
+	}
+
+	button {
+		background: #bada55;
+		padding: 10px;
+		border: none;
+		width: 800px;
+		font-size: 18px;
+	}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	$(function(){
+		var students = [
+			"Shane Keulen",
+			"Jillian Wallace",
+			"Lindsay Hartfiel",
+			"Nikin Nagewadia",
+			"Ben Weddel",
+			"Kristine Planche",
+			"Andrew Nguyen",
+			"Michaelangelo Yambao",
+			"Emilia Dallman",
+			"George Balkouras",
+			"Erika Pierre",
+			"Matt Fairley",
+			"Stephanie Celani",
+			"Andrea Saxe",
+			"Julie McCulloch",
+			"Sarah Roberts",
+			"Dana Werpny",
+			"Marlène Giraud",
+			"Moya Miller",
+			"Francine Navarro",
+			"Thomas Mattacchione",
+			"Ivailo Ivanov",
+			"Sam Chun",
+			"Sylvia Nguyen",
+			"Phil Richards",
+			"Rachel Bloom",
+			"Deborah Chan",
+			"Frank Wang"
+			];
+
+		var projects = ["HackerYou", "Ladies Learning Code","Heather Payne", "JourneyMade"]
+
+		function assignProjects(){
+			$('ul').html('');
+			for (var i = students.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = students[i];
+		        students[i] = students[j];
+		        students[j] = temp;
+		    }
+
+			var $body = $('body');
+
+			for (var i = 0; i < students.length; i++) {
+				if (i < 7){
+				$('.hy').addClass('found');
+					$('.hy').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 14){
+					$('.llc').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 21){
+					$('.hp').append('<li>' + students[i] + '</li>');
+				}
+				else  {
+					$('.jm').append('<li>' + students[i] + '</li>');
+				}
+			};
+		}
+
+		$('.go').on('click', assignProjects);
+	});
+
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Week 3 Project Assigner</h1>
+		<button class="go">Make Groups</button>
+		<div class="group">
+			<h2>Team Pioneer</h2>
+			<ul class="hy">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team Solido</h2>
+			<ul class="llc">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team Master</h2>
+			<ul class="hp">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team Luxen</h2>
+			<ul class="jm">
+
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
