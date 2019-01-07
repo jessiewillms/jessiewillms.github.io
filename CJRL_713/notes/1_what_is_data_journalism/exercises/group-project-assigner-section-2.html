@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Groups - SEC. 302</title>
+	<style>
+	body {
+		font-family: "Helvetica";
+		font-size: 20px;
+	}
+
+	.wrapper {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	.group {
+		float: left;
+		width: 50%;
+	}
+
+	button {
+		background: #bada55;
+		padding: 10px;
+		border: none;
+		width: 800px;
+		font-size: 18px;
+	}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	$(function(){
+		var students = ["Mary An",
+		"Tetiana Ielyseieva",
+		"Markessie Moya-Brezault",
+		"Cristela Tello Ruiz",
+		"Landen Kruger",
+		"Linda Vachon",
+		"Alyssa Albanese",
+		"Kaitlin Nadira Balram",
+		"Kateryna Bandura",
+		"Jessie Cheung",
+		"Cole Sean Alexander Donnachie",
+		"Alan Andrew Downward",
+		"Margaryta Ignatenko",
+		"Jae You Kim",
+		"Amarra Shakira Mohamed",
+		"Elizabeth Chibuzoma Ononiwu",
+		"Stefano Nicholas Ruccia",
+		"Rhythm Sachdeva",
+		"Russul Sahib",
+		"Jianing Yu"];
+		// 20
+
+		console.log(students.length)
+		console.log(students.length / 5)
+
+		var projects = ["HackerYou", "Ladies Learning Code","Heather Payne", "JourneyMade"]
+
+		function assignProjects(){
+			$('ul').html('');
+			for (var i = students.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = students[i];
+		        students[i] = students[j];
+		        students[j] = temp;
+		    }
+
+			var $body = $('body');
+
+			for (var i = 0; i < students.length; i++) {
+				if (i < 5){
+				$('.hy').addClass('found');
+					$('.hy').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 10){
+					$('.llc').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 15){
+					$('.jw').append('<li>' + students[i] + '</li>');
+				}
+				// else if (i < 20){
+				// 	$('.hp').append('<li>' + students[i] + '</li>');
+				// }
+				else  {
+					$('.jm').append('<li>' + students[i] + '</li>');
+				}
+			};
+		}
+
+		$('.go').on('click', assignProjects);
+	});
+
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Group assigner</h1>
+		<button class="go">Make groups</button>
+		<div class="group">
+			<h2>Group 1</h2>
+			<ul class="hy">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Group 2</h2>
+			<ul class="llc">
+
+			</ul>
+		</div>
+
+		<!-- <div class="group">
+			<h2>Group 3</h2>
+			<ul class="hp">
+
+			</ul>
+		</div> -->
+
+		<div class="group">
+			<h2>Group 3</h2>
+			<ul class="jw">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Group 4</h2>
+			<ul class="jw">
+
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

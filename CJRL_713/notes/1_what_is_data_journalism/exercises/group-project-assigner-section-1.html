@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Groups - SEC. 301</title>
+	<style>
+	body {
+		font-family: "Helvetica";
+		font-size: 20px;
+	}
+
+	.wrapper {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	.group {
+		float: left;
+		width: 50%;
+	}
+
+	button {
+		background: #bada55;
+		padding: 10px;
+		border: none;
+		width: 800px;
+		font-size: 18px;
+	}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	$(function(){
+		// var students = ["Ellyse Mcgarr", "Mathilde Augustin", "Khyrsten Mieras", "Gokul Gobikrishna", "Deandra Anjanique Eland", "Valerie Acuna", "Jeda Mccall", "Mark Plotkin", "Sarina Qadri", "Remi Stephanie Rozario", "Namar Smith", "Agnes Anh Nha Vy Tran", "Arthur Nathan Feliciano Villasan", "Kevin-Jose Da Silva Vitorino", "Fadzaiishe Rebecca Ziramba", "Tara Khalilnia-Momeny", "Amanda Gibb"];
+
+		var students = ["Ellyse Mcgarr",
+		"Mathilde Augustin",
+		"Khyrsten Mieras",
+		"Gokul Gobikrishna",
+		"Deandra Anjanique Eland",
+		"Valerie Acuna",
+		"Jeda Mccall",
+		"Mark Plotkin",
+		"Sarina Qadri",
+		"Remi Stephanie Rozario",
+		"Namar Smith",
+		"Agnes Anh Nha Vy Tran",
+		"Arthur Nathan Feliciano Villasan",
+		"Kevin-Jose Da Silva Vitorino",
+		"Fadzaiishe Rebecca Ziramba",
+		"Tara Khalilnia-Momeny",
+		"Amanda Gibb"];
+
+		console.log('students', students.length)
+		console.log('grp num', students.length / 5)
+
+		// var projects = ["HackerYou", "Ladies Learning Code","Heather Payne", "JourneyMade"]
+
+		function assignProjects(){
+			$('ul').html('');
+			for (var i = students.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = students[i];
+		        students[i] = students[j];
+		        students[j] = temp;
+		    }
+
+			var $body = $('body');
+
+			for (var i = 0; i < students.length; i++) {
+				if (i < 3){
+				$('.hy').addClass('found');
+					$('.hy').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 7){
+					$('.llc').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 10){
+					$('.hp').append('<li>' + students[i] + '</li>');
+				}
+				else if (i < 13){
+					$('.jw').append('<li>' + students[i] + '</li>');
+				}
+				else  {
+					$('.jm').append('<li>' + students[i] + '</li>');
+				}
+			};
+		}
+
+		$('.go').on('click', assignProjects);
+	});
+
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Group assigner</h1>
+		<button class="go">Make groups</button>
+		<div class="group">
+			<h2>Team 1</h2>
+			<ul class="hy">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team 2</h2>
+			<ul class="llc">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team 3</h2>
+			<ul class="hp">
+
+			</ul>
+		</div>
+
+		<div class="group">
+			<h2>Team 4</h2>
+			<ul class="jm">
+
+			</ul>
+		</div>
+		<div class="group">
+			<h2>Team 5</h2>
+			<ul class="jw">
+
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
