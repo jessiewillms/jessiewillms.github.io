@@ -1177,7 +1177,7 @@
 
 <p><strong>Some common functions</strong></p>
 
-<p>Function examples <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit?usp=sharing" class="Function examples"><em>**</em></a></p>
+<p>Look at some of these functions in action: <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit#gid=0" class="Function examples"><em>**</em></a></p>
 
 <p><strong>Joining data</strong></p>
 
@@ -1232,7 +1232,8 @@
   <li>
     <p>Checks one value if a logical expression is <code>TRUE</code> and another if it is <code>FALSE</code>:<br />
 <code>=IF(A2 = "sunshine", "True: Nice weather", "False: Lousy weather")</code><br />
-<code>=IF(A2 = "sunshine", 1, 0)</code></p>
+<code>=IF(A2 &gt;= 12, 1, 0)</code><br />
+<code>=IF( (A2 / 10 &gt; 100), 1, 0)</code></p>
   </li>
   <li>
     <p>Returns the position at which a string is first found within text, case-sensitive:<br />
@@ -1279,7 +1280,7 @@
   </li>
 </ul>
 
-<p>To practice the functions below, open up this Google Spreadsheet <a href="https://docs.google.com/spreadsheets/d/1f_ArdzTp9-GErhuWXV-pJLH-_Ab7nOEcoLJpDO8PbN4/edit?usp=sharing" class="Practice with functions"><em>**</em></a></p>
+<p>For more practice with functions, <a href="exercises/functions.html" class="exercise">work through these problems </a></p>
 
 <p><strong>Getting data</strong></p>
 
@@ -1311,9 +1312,8 @@
 
 <p><strong>Wrapping functions</strong></p>
 
-<p>Function examples <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit#gid=0" class="Practice with functions"><em>**</em></a></p>
-
 <ul>
+  <li>In the <code>multiple_functions</code> tab</li>
   <li>we can wrap multiple functions together<br />
 <code>=IF(NOT(ISERR(FIND( "Disney", C3, 1))), 1, 0)</code></li>
   <li>
