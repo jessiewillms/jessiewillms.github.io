@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title> Pivot Tables |  The Globe and Mail</title>
+	<title> Working with IMPORT |  The Globe and Mail</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="/assets/main-44cf6a473d9b9f7417bbc1387e2aa18a.css"> -->
 	<!-- <link rel="stylesheet" href="twitter.com/JessieWillms/assets/main.css"> -->
@@ -1084,7 +1084,7 @@
 
 	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
-  <link rel="canonical" href="twitter.com/JessieWillms/3_working_with_spreadsheets/03_pivot_tables.html">
+  <link rel="canonical" href="twitter.com/JessieWillms/3_working_with_spreadsheets/exercises/import.html">
   <link rel="alternate" type="application/rss+xml" title="Interactive & Data Journalism" href="twitter.com/JessieWillms/feed.xml" />
 </head>
 <body>
@@ -1099,133 +1099,75 @@
         <a href="/">Interactive & Data Journalism</a>
         <!-- <a href="twitter.com/JessieWillmsdata-training/index.html">Interactive & Data Journalism</a> -->
       </h3>
-      <h2>Pivot Tables</h2>
+      <h2>Working with IMPORT</h2>
     </div>
   </div>
 </header>
 
 
-<div class="back-link">
-  <a href="/" class="toc">&#9664; Table of contents</a>
-</div>
-
-
-
-<style>
-
-</style>
 
 <div class="wrapper">
-	<section class="lesson markdown-body">
-<h2 id="pivot-tables">Pivot Tables</h2>
+	<section class="lessonList">
+<h2 id="using-various-import-functions-answer-these-questions-in-a-summary-table">Using various <code>IMPORT</code> functions, answer these questions in a summary table.</h2>
 
 <ul>
-  <li>Pivot Tables are super powerful</li>
-  <li>
-    <p>They can be used to summarize and explore your data quickly, or expose missing/bad data</p>
-  </li>
-  <li><strong>Great for:</strong>
-    <ul>
-      <li>Count by variables (group)</li>
-      <li>Sum by group</li>
-      <li>Average by group</li>
-      <li>Maximum or minimum by group</li>
-      <li>Advanced pivoting by many variables (see: <strong>Advanced Pivot Tables</strong> lesson)</li>
-    </ul>
-  </li>
-  <li><strong>How to (Google Spreadsheets):</strong>
-    <ul>
-      <li>Data &gt; Pivot table</li>
-      <li>Opens in a new tab, with the <strong>Pivot Table editor open</strong></li>
-      <li>Add/move rows, columns, values, filters</li>
-    </ul>
-  </li>
+  <li>What is the total gross for the <strong>top 10</strong> highest grossing films?</li>
+  <li>What is the total gross for the complete list?</li>
+  <li>How many of the highest grossing films were released since 2000?</li>
+  <li>Import the top 10 highest grossing films</li>
 </ul>
 
-<p><img src="img/pivot-table-1.gif" alt="Pivot Tables - first step" /></p>
+<p>Note: Record your answers in the <code>data_work</code> tab of this <a href="https://docs.google.com/spreadsheets/d/17V2PtNTpYoqYAowwQk7IP6pPn21z_Q36y6TXrqjypho/edit?usp=sharing">spreadsheet</a>.</p>
 
-<h4 id="whats-happening-here">What’s happening here?</h4>
+<h3 id="step-1-find-and-import-the-data">Step 1: Find and import the data.</h3>
+
+<p><strong>Wikipedia:</strong> <a href="https://en.wikipedia.org/wiki/List_of_highest-grossing_films">Highest grossing films, ever</a></p>
+
+<p>In a tab/sheet called <code>highest_grossing_films</code>: Use the <code>IMPORTHTML</code> function to load the Wikipedia table into your spreadsheet.</p>
+
+<p><img src="../img/vlookup-1.gif" alt="Split to columns" /></p>
+
+<h3 id="step-2-perform-calculations-import-in-the-answers-tab">Step 2: Perform calculations, import in the answers tab</h3>
+
+<!-- - Find the total (`sum`), average, and use a `IF` function to solve the above. -->
 <ul>
-  <li><code>Rows</code> the grouping variable</li>
-  <li><code>Values:</code> the variables we want to summarize – values in our table</li>
+  <li>Use the <code>IMPORTRANGE</code> function to report your answers in the <code>data_work</code> tab. (Wrap your calculations in an import function to avoid duplicating the answers.)</li>
 </ul>
 
-<p><img src="img/pivot-table-components.png" alt=" - components" /></p>
+<p><br /></p>
+<hr />
 
-<h4 id="in-the-pivot-table-editor-right-hand-side">In the Pivot Table editor (right-hand side):</h4>
-<ul>
-  <li><code>Data range:</code> <em>what</em> data to get from your worksheet/tab
-    <ul>
-      <li><code>ufo-sightings-ontario-2012!A1:S101</code></li>
-      <li>gets data <em>from</em> the <code>ufo-sightings-ontario-2012</code> tab</li>
-      <li><em>only</em> gets data in the cells from A1 (top left) to S101</li>
-    </ul>
-  </li>
-  <li><code>Rows:</code> Drag fields here to create rows
-    <ul>
-      <li>Placing more than one value with create “nested” rows</li>
-    </ul>
-  </li>
-  <li><code>Columns:</code> Drag fields here to create columns
-    <ul>
-      <li>Placing more than one value will create “nested” columns</li>
-    </ul>
-  </li>
-  <li><code>Values:</code> Drag fields here to determine the data that is being evaluated</li>
-  <li><code>Filters:</code> Selectively view data based on particular values
-    <ul>
-      <li>can remove missing data, or data in a range, data less/more than x</li>
-    </ul>
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Review: what we covered</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">SUM functions</td>
+      <td style="text-align: left">✅</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IMPORTHTML function</td>
+      <td style="text-align: left">✅</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Wrapping functions</td>
+      <td style="text-align: left">✅</td>
+    </tr>
+  </tbody>
+</table>
 
-<h4 id="we-can-summarize-data-by">We can summarize data by:</h4>
-<ul>
-  <li><code>COUNTA</code>: gets a tally of cells containing values (ie., how many cells in a column called “Color” have a value of “red”)</li>
-  <li><code>SUM</code>: the total</li>
-  <li><code>MIN/MAX</code>: biggest/smallest values</li>
-</ul>
+<h4 id="more-on-vlookup">More on VLOOKUP</h4>
+<p><a href="https://exceljet.net/excel-functions/excel-vlookup-function">VLOOKUP</a><br />
+<a href="https://www.youtube.com/watch?v=E7gQ-PgYkMc">YouTube video</a><br />
+<a href="https://support.google.com/docs/answer/3093318?hl=en">Google support for VLOOKUP</a><br />
+<a href="https://support.google.com/docs/answer/3093293?hl=en">ISNA</a><br />
+<a href="https://support.google.com/docs/answer/3093364">IF</a></p>
 
-<p><strong>How many sightings in the <code>summer months</code> were <code>red</code>, excluding sightings with <code>fewer than 2 witnesses:</code></strong></p>
-
-<p><img src="img/pivot_table_final.png" alt="Pivot Table final" /></p>
-
-<h4 id="using-data-from-pivot-tables">Using data from Pivot Tables</h4>
-
-<p>When you make a pivot table, it remains tethered to the underlying data you used to create it. If the data changes, your table changes. <strong>But:</strong> editing, sorting, filtering the data is annoying.</p>
-
-<ul>
-  <li><strong>Solution:</strong> copy + paste the table into a new tab</li>
-  <li>Select table</li>
-  <li>Copy table</li>
-  <li>In a new tab, go to: <code>Edit &gt; Paste special &gt; paste values only</code></li>
-</ul>
-
-<p><img src="img/pivot-table-copy-paste.gif" alt="Copy and paste your data" /></p>
-
-<p>This table is no longer attached to the data.</p>
-
-<p>If the data changes, your pasted table WILL NOT automatically update. There is not longer a connection between the Pivot Table and the worksheet.</p>
-
-<h4 id="more-on-pivot-tables">More on Pivot Tables</h4>
-
-<ul>
-  <li><small>🔗</small><a href="https://projects.propublica.org/graphics/images/data-institute/presentations/pivot-tables.pdf">ProPublica Pivot Table how-to guide</a></li>
-  <li><small>🔗</small><a href="https://support.google.com/docs/answer/1272900?hl=en">Google support forum for creating a Pivot Table</a></li>
-  <li><small>🔗</small><a href="https://www.youtube.com/watch?v=xzgM5Aruh7w">YouTube video demonstrating how to create a Pivot Table</a></li>
-</ul>
-
-<h1 id="exercise">Exercise</h1>
-
-<p>To practice your spreadsheet skills, download this CSV 👽: <a href="exercises/ufos.csv" class="exercise"><strong>ufos.csv</strong></a></p>
-
-<ul>
-  <li>Then complete this quiz
-    <ul>
-      <li><small>🔗</small> <a href="https://goo.gl/forms/ekxnJWV3InV4EB0w2">Spreadsheets: Pivot Tables</a></li>
-    </ul>
-  </li>
-</ul>
+<!-- https://www.pollstar.com/Chart/2018/12/2018YearEndTop100WorldwideTours_697.pdf -->
 
 	</section>
 </div>

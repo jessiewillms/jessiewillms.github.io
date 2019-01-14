@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title> Filtering, sorting, basic functions in spreadsheets |  The Globe and Mail</title>
+	<title> Filtering, sorting, and functions |  The Globe and Mail</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="/assets/main-44cf6a473d9b9f7417bbc1387e2aa18a.css"> -->
 	<!-- <link rel="stylesheet" href="twitter.com/JessieWillms/assets/main.css"> -->
@@ -1099,7 +1099,7 @@
         <a href="/">Interactive & Data Journalism</a>
         <!-- <a href="twitter.com/JessieWillmsdata-training/index.html">Interactive & Data Journalism</a> -->
       </h3>
-      <h2>Filtering, sorting, basic functions in spreadsheets</h2>
+      <h2>Filtering, sorting, and functions</h2>
     </div>
   </div>
 </header>
@@ -1177,26 +1177,33 @@
 
 <p><strong>Some common functions</strong></p>
 
+<p>Function examples <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit?usp=sharing" class="Function examples"><em>**</em></a></p>
+
+<p><strong>Joining data</strong></p>
+
+<ul>
+  <li>Concatenate/join text in a row:<br />
+<code>=JOIN("-",D2,E2,F2)</code></li>
+</ul>
+
+<p><strong>Basic math</strong></p>
+
 <ul>
   <li>
-    <p>Concatenate/join text in a row:<br />
-<code>=JOIN("-",D2,E2,F2)</code></p>
+    <p>Find sum (total) of values:<br />
+<code>=SUM(A2, B2, C2)</code></p>
   </li>
   <li>
     <p>Find sum (total) of values:<br />
 <code>=SUM(A2, B2, C2)</code></p>
   </li>
   <li>
-    <p>Make a comparison between values:<br />
-<code>=IF(C2&gt;C3,1,2)</code></p>
-  </li>
-  <li>
-    <p>Find average of a range of number:<br />
+    <p>Find average of a range of numbers:<br />
 <code>=AVERAGE(C2:C100)</code></p>
   </li>
   <li>
     <p>Find the average of a specific set of numbers:<br />
-<code>=AVERAGE(C2,C5,C10) </code></p>
+<code>=AVERAGE(C2,C5,C10)</code></p>
   </li>
   <li>
     <p>Find the median value in a set of numbers<br />
@@ -1217,18 +1224,113 @@
 <code>=(C101 - C1)</code><br />
 <code>=(C101 + C1)</code></p>
   </li>
+</ul>
+
+<p><strong>Checking data</strong></p>
+
+<ul>
   <li>
-    <p>Import a table of data<br />
-<code>=IMPORTHTML("https://en.wikipedia.org/wiki/List_of_2018_box_office_number-one_films_in_the_United_States", "TABLE", 1)</code><br />
-<code>=IMPORTHTML("https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/industry-licensees-applicants/licensed-cultivators-processors-sellers.html", "TABLE", 1)</code></p>
+    <p>Checks one value if a logical expression is <code>TRUE</code> and another if it is <code>FALSE</code>:<br />
+<code>=IF(A2 = "sunshine", "True: Nice weather", "False: Lousy weather")</code><br />
+<code>=IF(A2 = "sunshine", 1, 0)</code></p>
+  </li>
+  <li>
+    <p>Returns the position at which a string is first found within text, case-sensitive:<br />
+<code>=FIND("wood","How much wood can a woodchuck chuck")</code><br />
+<code>FIND(search_for, text_to_search, [starting_at])</code></p>
+  </li>
+  <li>
+    <p>Returns the position at which a string is first found within text, ignoring case.<br />
+<code>SEARCH("wood","How much wood can a woodchuck chuck")</code><br />
+<code>SEARCH(search_for, text_to_search, [starting_at])</code></p>
   </li>
 </ul>
 
-<h4 id="more-on-functions">More on functions</h4>
+<p><strong>Checking data types</strong></p>
 
 <ul>
-  <li><small>🔗</small> <a href="https://support.google.com/docs/table/25273?hl=en">List of Google Spreadsheet functions</a></li>
-  <li><small>🔗</small> <a href="https://support.office.com/en-us/article/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb">List of Excel functions </a></li>
+  <li>
+    <p>Checks if data is a string (text)<br />
+<code>=ISTEXT("sunny weather")</code><br />
+<code>=ISTEXT(8)</code></p>
+  </li>
+  <li>
+    <p>Checks if data is a boolean (true/false) value<br />
+<code>=ISLOGICAL(TRUE)</code><br />
+<code>=ISLOGICAL(B12)</code></p>
+  </li>
+  <li>
+    <p>Checks if data is a number<br />
+<code>=ISNUMBER(136)</code><br />
+<code>=ISNUMBER(B12)</code></p>
+  </li>
+</ul>
+
+<p><strong>Error handling</strong></p>
+
+<ul>
+  <li>
+    <p>Checks if a cell value is equal to an error (<code>#N/A</code>)<br />
+<code>=ISNA(A2)</code></p>
+  </li>
+  <li>
+    <p>Checks for an error in a specific cell<br />
+<code>=IFERROR(A1,"Error in cell A1")</code></p>
+  </li>
+</ul>
+
+<p>To practice the functions below, open up this Google Spreadsheet <a href="https://docs.google.com/spreadsheets/d/1f_ArdzTp9-GErhuWXV-pJLH-_Ab7nOEcoLJpDO8PbN4/edit?usp=sharing" class="Practice with functions"><em>**</em></a></p>
+
+<p><strong>Getting data</strong></p>
+
+<ul>
+  <li>
+    <p>Import a table of data from the internet<br />
+<code>=IMPORTHTML("https://en.wikipedia.org/wiki/List_of_2018_box_office_number-one_films_in_the_United_States", "TABLE", 1)</code><br />
+<code>=IMPORTHTML("https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/industry-licensees-applicants/licensed-cultivators-processors-sellers.html", "TABLE", 1)</code><br />
+<code>=IMPORTHTML("https://www.billboard.com/archive/charts/1991/country-songs", "TABLE", 1)</code></p>
+  </li>
+  <li>
+    <p>Import a range of data from another tab/sheet<br />
+<code>=IMPORTRANGE(spreadsheet_key, "tab_name!A3")</code><br />
+<code>=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1X5vqyLf7itgF-b6QZRRoVLuHdlji3mqvTDdKBUy8jG4/edit#gid=1687373309", "ufos!A3")</code></p>
+  </li>
+</ul>
+
+<p>To practice your IMPORT skills, open <a href="exercises/import.html" class="exercise"><strong>import</strong></a></p>
+
+<p><code>=VLOOKUP(search_key, range, index, [is_sorted])</code></p>
+
+<p>VLOOKUP looks for a value in a column; then it returns a value from any cell in the same row.</p>
+
+<p><code>search_key</code>: value to find<br />
+<code>range</code>: two or more columns, to find the data<br />
+<code>index</code> - the column number from the range; you can return any value in that row</p>
+
+<p>To practice your VLOOKUP skills, open <a href="exercises/vlookup.html" class="exercise"><strong>vlookup</strong></a></p>
+
+<p><strong>Wrapping functions</strong></p>
+
+<p>Function examples <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit#gid=0" class="Practice with functions"><em>**</em></a></p>
+
+<ul>
+  <li>we can wrap multiple functions together<br />
+<code>=IF(NOT(ISERR(FIND( "Disney", C3, 1))), 1, 0)</code></li>
+  <li>
+    <p>^ this is 3 functions in one line; starting from the innermost function</p>
+  </li>
+  <li><strong>1</strong> <code>FIND( "Disney", C3, 1))</code>: checks the string in cell <code>C3</code> to see if the substring “Disney” exists</li>
+  <li>if the substring exists, this will return the position of the substring(a number)</li>
+  <li>
+    <p>if the substring does not exist, it will return an error <code>#VALUE!</code></p>
+  </li>
+  <li><strong>2</strong> <code>ISERR(value)</code>: check if the value is an error</li>
+  <li>in our example, it is checking if <code>FIND( "Disney", C3, 1))</code> returns an error</li>
+  <li>
+    <p>wrapping this in a <code>NOT()</code> function (makes the next step easier)</p>
+  </li>
+  <li><strong>3</strong> <code>=IF( F3 = TRUE, 1, 0)</code>: returns 1 or 0 if the cell contains an error</li>
+  <li>use this value to find the total number of Disney movies</li>
 </ul>
 
 <h4 id="whats-happening-here">What’s happening here?</h4>
@@ -1272,6 +1374,13 @@
 
 <p><img src="img/function-before-after.png" alt="Function before and after" /></p>
 
+<h4 id="more-on-functions">More on functions</h4>
+
+<ul>
+  <li><small>🔗</small> <a href="https://support.google.com/docs/table/25273?hl=en">List of Google Spreadsheet functions</a></li>
+  <li><small>🔗</small> <a href="https://support.office.com/en-us/article/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb">List of Excel functions </a></li>
+</ul>
+
 <h2 id="filtering">Filtering</h2>
 
 <p><strong>Creating a “filtered” view (to find things)</strong></p>
@@ -1301,61 +1410,6 @@
 
 <hr />
 
-<h2 id="exercise">Exercise</h2>
-
-<p>To practice your spreadsheet skills, download this CSV 👽: <a href="exercises/ufos.csv" class="exercise"><strong>ufos.csv</strong></a></p>
-
-<p><strong>Complete the following tasks in your spreadsheet:</strong></p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Import data into Google Spreadsheets</td>
-    </tr>
-    <tr>
-      <td>Name the workbook (spreadsheet)</td>
-    </tr>
-    <tr>
-      <td>Format + freeze header row</td>
-    </tr>
-    <tr>
-      <td>Make a copy of the data. Ensure filename reflects that it is a copy.</td>
-    </tr>
-    <tr>
-      <td>Name each tab/worksheet. The name of each worksheet should reflect its content. s</td>
-    </tr>
-    <tr>
-      <td>Check that cells of data type are correctly formatted — ie., if a column contains numbers, it should be right-aligned</td>
-    </tr>
-    <tr>
-      <td>Check for missing, incomplete, or poorly formatted data; correct errors (and make a note of incomplete/missing data)</td>
-    </tr>
-    <tr>
-      <td>Add a counter column; populate it starting at 1 (one)</td>
-    </tr>
-    <tr>
-      <td>In the “date” column, insert a function to join the day, month and year columns. Use this format YYYY-MM-DD</td>
-    </tr>
-    <tr>
-      <td>Insert a new column, call it “location_full” and create a function to join the city, state, and country. Use this format: Barrie, ON, Canada</td>
-    </tr>
-    <tr>
-      <td>Split the lat_long column into two columns (latitude and longitude).</td>
-    </tr>
-    <tr>
-      <td>Remove the decimals from the time column</td>
-    </tr>
-    <tr>
-      <td>Use conditional formatting to add a black background to all cells that are empty (have no data)*</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Then complete this quiz</strong><br />
-<small>🔗</small> <a href="https://goo.gl/forms/xNatXDaf0xuBqSAn1">Spreadsheets: sorting, filtering, basic functions</a></p>
-
-<p><strong>Bonus</strong><br />
-- Create a text document that outlines the steps you took for any complex answers (see the lesson: <a href="/2_working_with_spreadsheets/02_spreadsheet_tips.html">02_spreadsheet_tips</a>.)</p>
 
 	</section>
 </div>
