@@ -1139,7 +1139,7 @@
 <ul>
   <li><strong>How to (Google Spreadsheets):</strong>
     <ul>
-      <li>Click small caraet on letter cell above header row</li>
+      <li>Click small <code>caraet</code> on letter cell above header row</li>
       <li>From dropdown, select Sort sheet ⟶ A-Z</li>
     </ul>
   </li>
@@ -1177,75 +1177,201 @@
 
 <p><strong>Some common functions</strong></p>
 
-<p>Look at some of these functions in action: <a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit#gid=0" class="Function examples"><em>**</em></a></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1e-KgZFRZOyX4F4B5-Icdbixi0AN2oPJlUv71LL3vQsY/edit#gid=0" class="exercise">Look at some of these functions in action.</a></p>
 
-<p><strong>Joining data</strong></p>
+<!-- *** For each of the examples below: the first line is ~pseudo code~, meaning it -->
+
+<p><strong>Joining/splitting data</strong></p>
 
 <ul>
-  <li>Concatenate/join text in a row:<br />
-<code>=JOIN("-",D2,E2,F2)</code></li>
+  <li>
+    <p>Concatenate/join text in a row:<br />
+<code>=JOIN("-",D2,E2,F2)</code></p>
+  </li>
+  <li>
+    <p>Split a text into multiple columns/cells:<br />
+<code>=SPLIT(D2, " ", TRUE, TRUE)</code><br />
+<code>=SPLIT(text, delimiter, [split_by_each], [remove_empty_text])</code></p>
+  </li>
 </ul>
+
+<pre><code>Split this cell of text on the space: J.K. Rowling
+
+    =SPLIT(C18, " ", TRUE, FALSE)
+
+    - SPLIT: name of the function
+    - C18: cell where the author name lives
+    - " ": first parameter, the character to split the text on
+    - TRUE: second parameter; boolean
+        - when TRUE: split divide text around each character contained in delimiter
+    - FALSE: third parameter; boolean
+        - whether or not to remove empty text messages from the split results
+
+    This function returns:
+
+    J.K. | Rowling
+
+    (in two cells)
+</code></pre>
+
+<hr />
 
 <p><strong>Basic math</strong></p>
 
+<p>** see math tab of spreadsheet **</p>
+
 <ul>
   <li>
-    <p>Find sum (total) of values:<br />
+    <p>Find sum (total) for <em>specific</em> values:<br />
 <code>=SUM(A2, B2, C2)</code></p>
   </li>
   <li>
-    <p>Find sum (total) of values:<br />
-<code>=SUM(A2, B2, C2)</code></p>
+    <p>Find sum (total) for a <em>range</em> of values:<br />
+<code>=SUM(A2:A100)</code></p>
   </li>
   <li>
-    <p>Find average of a range of numbers:<br />
-<code>=AVERAGE(C2:C100)</code></p>
-  </li>
-  <li>
-    <p>Find the average of a specific set of numbers:<br />
+    <p>Find the average of a <em>specific</em> values:<br />
 <code>=AVERAGE(C2,C5,C10)</code></p>
   </li>
   <li>
-    <p>Find the median value in a set of numbers<br />
-<code>=MEDIAN(C1:C101)</code></p>
+    <p>Find average of a <em>range</em> of values:<br />
+<code>=AVERAGE(C2:C100)</code></p>
   </li>
+</ul>
+
+<pre><code>Finding the average test score.
+    scores: 76, 87, 78, 78, 91, 12, 67
+    add up all values: 76 + 87 + 78 + 78 + 91 + 12 + 67 = 489
+    divide this total by number of values: 489 / 7
+    average test score: 69.86
+</code></pre>
+
+<ul>
+  <li>Find the median value in the data</li>
+  <li>median: sort the data, then find the value(s) in the middle.</li>
+  <li><code>=MEDIAN(C1:C101)</code></li>
+</ul>
+
+<pre><code>Finding the median test score.
+    - scores: 76, 87, 78, 78, 91, 12, 67
+    - scores sorted: 12, 67, 76, 78, 78, 87, 91
+    - median (middle) score: 78
+</code></pre>
+
+<ul>
+  <li>the value that occurs most frequently in the data.<br />
+<code>=MODE(A2:A12)</code></li>
+</ul>
+
+<pre><code>Finding the most common test score.
+    scores: 76, 87, 78, 78, 91, 12, 67
+    scores sorted: 12, 67, 76, 78, 78, 87, 91
+    median score: 78
+</code></pre>
+
+<ul>
   <li>
-    <p>Find the highest value(s)<br />
+    <p>Find the highest value(s) in a range of values<br />
 <code>=MAX(C1:C101)</code></p>
   </li>
   <li>
-    <p>Find the lowest value(s)<br />
+    <p>Find the lowest value(s) in a range of values<br />
 <code>=MIN(C1:C101)</code></p>
   </li>
   <li>
-    <p>Do some simple math (addition, subtraction, multiplication)<br />
+    <p>Do some simple math (division, addition, subtraction, multiplication)<br />
 <code>=(C1 / C101)</code><br />
 <code>=(C1 * C101)</code><br />
 <code>=(C101 - C1)</code><br />
 <code>=(C101 + C1)</code></p>
   </li>
+  <li>
+    <p>Calculate the time <a href="https://support.google.com/docs/answer/6055612?hl=en">between dates</a><small>🔗</small><br />
+<code>=DATEDIF(A1, A2, "YM")</code></p>
+  </li>
 </ul>
+
+<pre><code>How old is the Queen (measured in days)?
+
+** see how_old_is_the_queen tab of spreadsheet **
+
+    - She was born: April 21, 1926
+    - Is she still alive: Yes
+    - Unit of measurement: days
+
+    =DATEDIF(start_date, end_date, unit)
+
+    - start_date: April 21, 1926
+    - end_date: the exact current day (we will use a function)
+    - unit: days (D)
+
+    =DATEDIF("4/21/1926", NOW(), "D")
+
+    This function will return: 33872
+</code></pre>
+
+<hr />
 
 <p><strong>Checking data</strong></p>
 
 <ul>
-  <li>
-    <p>Checks one value if a logical expression is <code>TRUE</code> and another if it is <code>FALSE</code>:<br />
-<code>=IF(A2 = "sunshine", "True: Nice weather", "False: Lousy weather")</code><br />
+  <li>Checks one value if a logical expression is <code>TRUE</code> and another if it is <code>FALSE</code>:<br />
 <code>=IF(A2 &gt;= 12, 1, 0)</code><br />
-<code>=IF( (A2 / 10 &gt; 100), 1, 0)</code></p>
-  </li>
-  <li>
-    <p>Returns the position at which a string is first found within text, case-sensitive:<br />
-<code>=FIND("wood","How much wood can a woodchuck chuck")</code><br />
-<code>FIND(search_for, text_to_search, [starting_at])</code></p>
-  </li>
-  <li>
-    <p>Returns the position at which a string is first found within text, ignoring case.<br />
-<code>SEARCH("wood","How much wood can a woodchuck chuck")</code><br />
-<code>SEARCH(search_for, text_to_search, [starting_at])</code></p>
-  </li>
+<code>=IF( (A2 / 10 &gt; 100), 1, 0)</code></li>
 </ul>
+
+<p><code>IF</code> example:</p>
+
+<p><img src="img/avengers-table.png" alt="Avengers" /></p>
+
+<pre><code>Did the Avengers make more than one billion dollars worldwide?
+
+** see IF_function tab of spreadsheet **
+
+    =IF( D1 &gt;= 1000000000, 1, 0)
+
+    - IF: name of the function
+    - D1: where the number for the Avengers worldwide box office gross lives
+    - &gt;=: comparison operator (greater than or equal to)
+    - 1, 0: values that the functions returns
+        - 1: if TRUE, the function will return a value of 1
+        - O: if FALSE, the function will return a value of 0
+
+    - This function will return: 1
+
+</code></pre>
+
+<!-- ```
+This function:
+    =IF("sunny with a chance of showers" = "sunshine", "True: Nice weather", "False: Lousy weather")`
+``` -->
+
+<ul>
+  <li>Returns the position at which a string is first found within text, <a href="https://support.google.com/docs/answer/3094126?hl=en">case-sensitive</a> <small>🔗</small>:<br />
+<code>=FIND("wood","How much wood can a woodchuck chuck")</code></li>
+</ul>
+
+<pre><code>How it works:
+
+    ** see column E of the multiple_functions tab in the spreadsheet **
+
+    =FIND("wood","How much wood can a woodchuck chuck")
+
+    - FIND: name of the function
+    - (search_for, text_to_search, [starting_at]): inside the round brackets, we have **two** mandatory parameters, and one optional parameter
+
+    - search_for: the first parameter; the sub-string (text) to look for
+    - text_to_search: the second parameter; where to look
+    - [starting_at]: optional third parameter; what character to start looking
+</code></pre>
+
+<ul>
+  <li>Returns the position at which a string is first found within text, ignoring case.<br />
+<code>SEARCH("wood","How much wood can a woodchuck chuck")</code><br />
+<code>SEARCH(search_for, text_to_search, [starting_at])</code></li>
+</ul>
+
+<hr />
 
 <p><strong>Checking data types</strong></p>
 
@@ -1304,36 +1430,39 @@
 
 <p>VLOOKUP looks for a value in a column; then it returns a value from any cell in the same row.</p>
 
-<p><code>search_key</code>: value to find<br />
-<code>range</code>: two or more columns, to find the data<br />
-<code>index</code> - the column number from the range; you can return any value in that row</p>
+<pre><code>    search_key: value to find
+    range: two or more columns, to find the data
+    index - the column number from the range; you can return any value in that row
+</code></pre>
 
 <p>To practice your VLOOKUP skills, open <a href="exercises/vlookup.html" class="exercise"><strong>vlookup</strong></a></p>
 
-<p><strong>Wrapping functions</strong></p>
+<p><strong>Wrapping functions</strong><br />
+We can wrap multiple functions together to complete multiple steps or calculations at once</p>
 
-<ul>
-  <li>In the <code>multiple_functions</code> tab</li>
-  <li>we can wrap multiple functions together<br />
-<code>=IF(NOT(ISERR(FIND( "Disney", C3, 1))), 1, 0)</code></li>
-  <li>
-    <p>^ this is 3 functions in one line; starting from the innermost function</p>
-  </li>
-  <li><strong>1</strong> <code>FIND( "Disney", C3, 1))</code>: checks the string in cell <code>C3</code> to see if the substring “Disney” exists</li>
-  <li>if the substring exists, this will return the position of the substring(a number)</li>
-  <li>
-    <p>if the substring does not exist, it will return an error <code>#VALUE!</code></p>
-  </li>
-  <li><strong>2</strong> <code>ISERR(value)</code>: check if the value is an error</li>
-  <li>in our example, it is checking if <code>FIND( "Disney", C3, 1))</code> returns an error</li>
-  <li>
-    <p>wrapping this in a <code>NOT()</code> function (makes the next step easier)</p>
-  </li>
-  <li><strong>3</strong> <code>=IF( F3 = TRUE, 1, 0)</code>: returns 1 or 0 if the cell contains an error</li>
-  <li>use this value to find the total number of Disney movies</li>
-</ul>
+<pre><code>** in the multiple_functions tab of the spreadsheet**
 
-<h4 id="whats-happening-here">What’s happening here?</h4>
+=IF(NOT(ISERR(FIND( "Disney", C3, 1))), 1, 0)
+
+- ^ this is 3 functions in one line; starting from the innermost function
+
+Step 1:
+    FIND( "Disney", C3, 1)): checks the string in cell C3 to see if the substring "Disney" exists
+    - if the substring exists, this will return the position of the substring(a number)
+    - if the substring does not exist, it will return an error #VALUE!
+
+Step 2:
+    ISERR(value): check if the value is an error
+    - in our example, it is checking if FIND( "Disney", C3, 1)) returns an error
+    - wrapping this in a NOT() function (makes the next step easier)
+
+Step 3:
+    =IF( F3 = TRUE, 1, 0): returns 1 or 0 if the cell contains an error
+    - use this value to find the total number of Disney movies
+
+</code></pre>
+
+<h2 id="breaking-down-functions">Breaking down functions</h2>
 
 <p><img src="img/function-image.png" alt="What is in a function" /></p>
 
@@ -1346,10 +1475,11 @@
       <li>usually tells you what the function will ~do~</li>
     </ul>
   </li>
-  <li><code>()</code>: opening and closing paranetheses
+  <li><code>()</code>: opening and closing parentheses
     <ul>
       <li>wrap around the guts of the function</li>
       <li>think of it as the container</li>
+      <li>contains <code>parameters</code> (arguement)</li>
     </ul>
   </li>
   <li><code>"-"</code>: the delimiter
