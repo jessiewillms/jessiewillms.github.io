@@ -1319,15 +1319,26 @@
   <li>
     <p>Important note: check for paginated data (see AGCO example above; this will only return the first 20 results)</p>
   </li>
-  <li>
-    <p>Import a list of data from the internet<br />
-<code>=IMPORTHTML("https://en.wikipedia.org/wiki/List_of_2018_box_office_number-one_films_in_the_United_States", "list", 1)</code></p>
-  </li>
+  <li>Import a list of data from the internet<br />
+<code>=IMPORTHTML("https://en.wikipedia.org/wiki/List_of_2018_box_office_number-one_films_in_the_United_States", "list", 1)</code></li>
+</ul>
+
+<pre><code>To find the index of a table:
+
+Open Developer Tools, copy &amp; paste this function.:
+
+var i = 1; [].forEach.call(document.getElementsByTagName("table"), function(x) { console.log(i++, x); });
+
+This will return the index of each table on the page.
+
+</code></pre>
+
+<ul>
   <li>Import a CSV or TSV from the internet<br />
 <code>=IMPORTDATA("http://opendata.toronto.ca/building/green.roof.permits/greenroof.csv")</code></li>
 </ul>
 
-<p><em>TIP</em> <img src="https://support.geckoboard.com/hc/en-us/articles/206260188-Use-Google-Sheets-ImportHTML-function-to-display-data-in-Geckoboard" alt="" /></p>
+<!-- *TIP* ![](https://support.geckoboard.com/hc/en-us/articles/206260188-Use-Google-Sheets-ImportHTML-function-to-display-data-in-Geckoboard) -->
 
 <ul>
   <li>Import a range of data from another tab/sheet<br />
@@ -1336,14 +1347,6 @@
 </ul>
 
 <p>To practice your IMPORT skills, open <a href="exercises/import.html" class="exercise"><strong>import</strong></a></p>
-
-<pre><code>Open Developer Tools, copy &amp; paste this function.:
-
-var i = 1; [].forEach.call(document.getElementsByTagName("table"), function(x) { console.log(i++, x); });
-
-This will return the index of each table on the page.
-
-</code></pre>
 
 <p><code>=VLOOKUP(search_key, range, index, [is_sorted])</code></p>
 
