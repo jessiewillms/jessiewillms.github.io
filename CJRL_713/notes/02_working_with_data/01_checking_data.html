@@ -1145,7 +1145,7 @@
       <td style="text-align: left">Are there similar repeated values?</td>
     </tr>
     <tr>
-      <td style="text-align: left">Is the data format what you’d expect for the data type?</td>
+      <td style="text-align: left">Is the data format what you would expect for the data type?</td>
     </tr>
     <tr>
       <td style="text-align: left">How was the data collected? Is it from a survey (survey – online survey vs. phone calls)?</td>
@@ -1168,6 +1168,7 @@
   <li><strong>Inflation</strong></li>
   <li>Currency inflation means that over time money changes in value</li>
   <li>Check with the source of the data to see if the numbers are adjusted</li>
+  <li><strong>How to correct</strong> Adjust the numbers for inflation (for example: using the Bank of Canada’s <a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">inflation calculator</a> )</li>
 </ul>
 
 <table class="tbls">
@@ -1196,7 +1197,6 @@
     </ul>
   </li>
   <li><strong>Timeframe or frame of reference has been manipulated</strong></li>
-  <li>Is</li>
 </ul>
 
 <table class="tbls">
@@ -1208,8 +1208,8 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>MTV’s Teen Mom vs. teen birth rate</strong><br /> Teen Mom aired its first season in the summer of 2009. The following year the teen birth rate dropped 3.6%, and the rate continued to drop every year following — is an MTV reality television to thank for this drop in teen pregnancy?</td>
-      <td style="text-align: left"><img src="img/checking-data-unclear.png" alt="Spelling" /></td>
+      <td style="text-align: left"><strong>MTV’s Teen Mom vs. teen birth rate</strong><br /> Teen Mom aired its first season in the summer of 2009. The following year the teen birth rate dropped 3.6%, and the rate continued to drop every year following — is an MTV reality television to thank for this drop in teen pregnancy? What was the historical trend?</td>
+      <td style="text-align: left"><img src="img/checking-data-skewed-range.png" alt="Spelling" /></td>
     </tr>
   </tbody>
 </table>
@@ -1234,6 +1234,21 @@
   <li>When in doubt: Go back to the source of the data to confirm why a value is missing, zero (0), or null</li>
 </ul>
 
+<table class="tbls">
+  <thead>
+    <tr>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">What does it look like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>2018 Toronto condo sales date</strong><br /> If a data set is to represent a full year, check that all months are recorded</td>
+      <td style="text-align: left"><img src="img/checking-data-missing-months.png" alt="missing months" /></td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="check-for-units-categories-and-labels">Check for units, categories, and labels</h3>
 
 <ul>
@@ -1241,13 +1256,13 @@
     <ul>
       <li>Check if foreign prices may be specified in their local currency
         <ul>
-          <li>ie., is you data in USD or CAD?</li>
+          <li>ie., is you data in USD or CAD? <small>🔗</small> <a href="https://www.rbcbank.com/cgi-bin/tools/cadusd-foreign-exchange-calculator/start.cgi">RBC calculator</a></li>
         </ul>
       </li>
       <li>What year is the dollar value from
         <ul>
           <li>ie., a $100 in 2010 is not $100 in 2019</li>
-          <li>Check for inflation, etc.</li>
+          <li>Check and adjust for inflation <small>🔗</small> <a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">Bank of Canada calculator</a></li>
         </ul>
       </li>
     </ul>
@@ -1261,11 +1276,8 @@
   <li><strong>Labels</strong>
     <ul>
       <li>Ambiguity = a likely error</li>
-      <li>Confirm with the source of the dataset your understanding matches their definitions
-        <ul>
-          <li>ie., is <code>residence</code></li>
-        </ul>
-      </li>
+      <li>Confirm with the source of the dataset your understanding matches their definitions<br />
+  <!-- - ie., is `residence` --></li>
     </ul>
   </li>
 </ul>
@@ -1329,11 +1341,7 @@
 <ul>
   <li><strong>Name order is inconsistent</strong>
     <ul>
-      <li>Check that <code>first_name</code> and <code>last_name</code> are accurately reflect the content
-        <ul>
-          <li>ie., is ``</li>
-        </ul>
-      </li>
+      <li>Check that <code>first_name</code> and <code>last_name</code> are accurately reflect the content</li>
     </ul>
   </li>
 </ul>
@@ -1488,42 +1496,32 @@
   <li><small>🔗</small> <a href="https://github.com/propublica/guides/blob/master/data-bulletproofing.md">ProPublica’s Bulletproofing Your Data Guide</a></li>
 </ul>
 
-<h1 id="exercise">Exercise</h1>
+<!-- # Exercise:
 
-<p>To practice checking data, download this CSV: <a href="exercises/ufos.csv" class="exercise"><strong>ufos.csv</strong></a></p>
+- <small>💻</small> Fix bad encoding. Using UFT-8.
+- <small>💻</small> Change dates to a consistent (DD-MM-YYYY) format. Take a screenshot of this new table.
+- <small>💻</small> Adjust housing data to 2019 values using Bank of Canada calculator. Take a screenshot of this new table.
+- <small>💻</small> Use a Pivot Table or a Filter to find the rows where a date is incorrectly recorded as `January 1st, 1904`. How many   -->
 
-<ul>
-  <li><small>🔗</small> Complete the worksheet <a href="https://docs.google.com/document/d/1jCxkZClneJVc7-syMhC4G7LoJO8oh09jtZwehdwgu-I/edit?usp=sharing">Bulletproofing your data</a></li>
-</ul>
+<h1 id="homework">Homework:</h1>
 
-<h2 id="review">Review</h2>
-<ol>
-  <li>Which city spelling is correct?
-    <ul>
-      <li><span class="hide">St. Catharines is the accurate spelling</span></li>
-    </ul>
-  </li>
-  <li>Which celebrity name is incorrectly entered?
-    <ul>
-      <li><span class="hide">Elizabeth Taylor NOT Taylor Elizabeth</span></li>
-    </ul>
-  </li>
-  <li>For date data was collected in Canada, which date format should be used?
-    <ul>
-      <li><span class="hide">DAY-MONTH-YEAR (????) TK - Globe format is tK TK TK </span></li>
-    </ul>
-  </li>
-  <li>For the tour data, what should the column headers be updated to say?
-    <ul>
-      <li><span class="hide">total_tour_earnings and earnings_per_show</span></li>
-    </ul>
-  </li>
-  <li>Is Teen Mom responsible for the drop in teen pregnancy between 2008 and 2016?
-    <ul>
-      <li><span class="hide">No, if you take a more broader historical view of the data, you can see the teen pregnancy rate was (more or less) dropping since 1990.</span></li>
-    </ul>
-  </li>
-</ol>
+<p>Create an account on Learno.</p>
+
+<p>Complete module 1 and 2 from Cleaning data in Excel. Feel free to use Google Spreadsheets when working with the data.</p>
+
+<!-- - <small>🔗</small> Complete the worksheet [Bulletproofing your data](https://learno.net/courses/cleaning-data-in-excel) -->
+
+<!-- ## Review
+1. Which city spelling is correct?
+    * <span class="hide">St. Catharines is the accurate spelling</span>
+2. Which celebrity name is incorrectly entered?
+	* <span class="hide">Elizabeth Taylor NOT Taylor Elizabeth</span>
+3. For date data was collected in Canada, which date format should be used?
+	* <span class="hide">DAY-MONTH-YEAR.</span>
+4. For the tour data, what should the column headers be updated to say?
+	* <span class="hide">total_tour_earnings and earnings_per_show</span>
+4. Is Teen Mom responsible for the drop in teen pregnancy between 2008 and 2016?
+	* <span class="hide">No, if you take a more broader historical view of the data, you can see the teen pregnancy rate was (more or less) dropping since 1990.</span> -->
 
 	</section>
 </div>
