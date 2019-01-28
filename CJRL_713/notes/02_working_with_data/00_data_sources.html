@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title> Data sources |  The Globe and Mail</title>
+	<title> Data sources |  CJRL_713</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="/assets/main-44cf6a473d9b9f7417bbc1387e2aa18a.css"> -->
 	<!-- <link rel="stylesheet" href="twitter.com/JessieWillms/assets/main.css"> -->
@@ -13,6 +13,7 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<style media="screen">
+	code { white-space: pre-wrap !important; }
 	.tbls tbody td:nth-of-type(1) {
 		width: 40%;
 	}
@@ -1091,12 +1092,12 @@
 
 <header class="site-header">
   <!-- <div class="stickNav">
-    <h1 class="site-title">The Globe and Mail</h1>
+    <h1 class="site-title">CJRL_713</h1>
   </div> -->
   <div class="wrapper">
     <div class="container">
       <h3>
-        <a href="/">Interactive & Data Journalism</a>
+        <a href="https://jessiewillms.github.io/CJRL_713/notes/index.html">Interactive & Data Journalism</a>
         <!-- <a href="twitter.com/JessieWillmsdata-training/index.html">Interactive & Data Journalism</a> -->
       </h3>
       <h2>Data sources</h2>
@@ -1178,7 +1179,7 @@
 
 <p><img src="img/importhtml-2.gif" alt="IMPORTHTML" /></p>
 
-<p><strong>Step 3.</strong> This data is connected to the live data (ie., the webpage). To sort the data, or create a Pivot Table, be sure to copy the table and, in a new table, use <code>Paste special</code> to paste the table data.</p>
+<p><strong>Step 3.</strong> This data is connected to the live data (ie., the webpage). To sort the data, or create a Pivot Table, be sure to copy the table and, in a new table, use <code>Paste special</code> to paste the table data. <strong>OR</strong> download the data as a CSV (<code>File &gt; Download as &gt; Comma-separated values</code>) then import into a new sheet (<code>File &gt; Import</code>) — use this option for large datasets, or datasets with a lot of numbers (especially dates as these numbers will often be truncated when using copy/paste).</p>
 
 <p><img src="img/importhtml-3.gif" alt="IMPORTHTML" /></p>
 
@@ -1218,9 +1219,10 @@
 
 <p><strong>Step 3:</strong> Copy + paste into a <a href="https://jsonformatter.curiousconcept.com/">formatter</a> to make human-readable).</p>
 
-<pre><code>* save as JSON
-* convert to [CSV](https://json-csv.com)
-</code></pre>
+<ul>
+  <li>save as JSON</li>
+  <li>convert to <a href="https://json-csv.com">CSV</a></li>
+</ul>
 
 <p><img src="img/network-tab-3.png" alt="Network tab" /></p>
 
@@ -1387,61 +1389,12 @@
   </li>
 </ul>
 
-<h1 id="exercise-finding-and-importing-data">Exercise: Finding and importing data</h1>
-
-<!-- Use an import function function to import data from one of these webpages
-	- City of Toronto - [breastfeeding clinics](https://www.toronto.ca/community-people/children-parenting/pregnancy-and-parenting/breastfeeding/services/breastfeeding-clinics/)
-	- Maclean's - [university rankings](https://www.macleans.ca/education/university-rankings/university-rankings-2019-canadas-top-primarily-undergraduate-schools/)
-	- CBC - [Canada-specific news](https://www.cbc.ca/cmlink/rss-canada)
-	- Craigslist - [1 bedroom apartments in Toronto](https://toronto.craigslist.org/search/apa)
-	- Grey's Anatomy - [U.S. television ratings](https://en.wikipedia.org/wiki/Grey%27s_Anatomy)
-	- Wikipedia - [Highest-grossing films of 2018](https://en.wikipedia.org/wiki/List_of_2018_box_office_number-one_films_in_the_United_States) -->
-
-<p><strong>Find answers to the following questions:</strong></p>
-
-<ul>
-  <li>How many breastfeeding clinics exist in Toronto?<br />
- 	- Import this table into a Google Spreadsheet.</li>
-  <li>How many one bedroom apartments are currently listed on Craigslist Toronto?
-    <ul>
-      <li>Import the URLs for each post into a Google Spreadsheet.</li>
-    </ul>
-  </li>
-  <li>List all seasons of Grey’s Anatomy to rank (<code>Overall rank</code>) in the top 10
-    <ul>
-      <li>Import the table into Google Spreadsheet and sort the data.</li>
-    </ul>
-  </li>
-  <li>How many of the <code>Highest-grossing films of 2018</code> were distributed by Disney?
-    <ul>
-      <li>Import the table into Google Spreadsheet and analyze the data</li>
-    </ul>
-  </li>
-  <li>What is the most expensive product on the Ontario cannabis Store in the <code>dried flower cannabis</code> category?
-    <ul>
-      <li>Find the JSON of product data, convert it to a CSV, and sort the data</li>
-    </ul>
-  </li>
-  <li>How many people named <code>Josh</code> made the Sunshine List? What was their combined salary in 2016?
-    <ul>
-      <li>Use download the Sunshine List data as a CSV. Sort the data, and use a function to find the total.</li>
-    </ul>
-  </li>
-  <li>In 2013, who spent more on office supplies: Norm Kelly or Mike Layton? How much did they spend?
-    <ul>
-      <li>Retrieve the correct year of data, sort the table to find the answer</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="submit-your-answers-herehttpsgooglformsyxpw21wn6dyg1igq2"><a href="https://goo.gl/forms/yxPW21WN6DYG1iGq2">Submit your answers here</a></h3>
-
 <h4 id="more-on-data">More on data</h4>
 <ul>
   <li><small>🔗</small> <a href="https://datajournalismhandbook.org/handbook/one/getting-data/a-five-minute-field-guide">Data Journalism Handbook</a></li>
 </ul>
 
-<p><small><strong><em>Credit and thanks to Valérie Ouellet of CBC News to compiling many of these resources</em></strong></small></p>
+<!-- <small>***Credit and thanks to Valérie Ouellet of CBC News to compiling many of these resources***</small> -->
 
 	</section>
 </div>
