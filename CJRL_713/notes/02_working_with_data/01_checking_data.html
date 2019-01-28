@@ -1107,7 +1107,7 @@
 
 
 <div class="back-link">
-  <a href="/" class="toc">&#9664; Table of contents</a>
+  <a href="https://jessiewillms.github.io/CJRL_713/notes/index.html" class="toc">&#9664; Table of contents</a>
 </div>
 
 
@@ -1169,7 +1169,7 @@
   <li><strong>Inflation</strong></li>
   <li>Currency inflation means that over time money changes in value</li>
   <li>Check with the source of the data to see if the numbers are adjusted</li>
-  <li><strong>How to correct</strong> Adjust the numbers for inflation (for example: using the Bank of Canada’s <a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">inflation calculator</a> )</li>
+  <li>Adjust for inflation — the Bank of Canada’s <a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">inflation calculator</a>)</li>
 </ul>
 
 <table class="tbls">
@@ -1190,6 +1190,9 @@
 <p><small><a href="exercises/data_working_with_data/median_housing_price.csv" class="exercise"><strong>median_housing_price.csv</strong></a></small></p>
 
 <ul>
+  <li>
+    <p><small>💻</small> How to fix: Use a trustworthy tool like BOC’s inflation calculator to adjust housing data to 2019 values.</p>
+  </li>
   <li><strong>Seasonal variation</strong></li>
   <li>Many types of data fluctuate naturally due to some underlying forces.
     <ul>
@@ -1395,6 +1398,10 @@
 
 <p><small><a href="exercises/data_working_with_data/date_formats.csv" class="exercise"><strong>date_formats.csv</strong></a></small></p>
 
+<ul>
+  <li><small>💻</small>To fix: Change dates to a consistent (DD-MM-YYYY) format.</li>
+</ul>
+
 <h3 id="check-for-numbers-as-text-and-text-as-numbers">Check for numbers as text and text as numbers</h3>
 <ul>
   <li>Not all numerals are numbers</li>
@@ -1422,6 +1429,10 @@
   </tbody>
 </table>
 
+<ul>
+  <li><small>💻</small>To fix: Sort a column (Z-A), filter, or create a Pivot Table to show where empty/blank values exist. If possible, correct. Or, exclude from analysis where necessary.</li>
+</ul>
+
 <h3 id="zeros-replace-missing-values--data-is-missing">Zeros replace missing values / data is missing</h3>
 <ul>
   <li>If you see zeros in a series of numbers you should ask yourself if those values are really the number <code>0</code> or if they instead mean <code>"nothing"</code>. (<code>-1</code> is also sometimes used this way.)</li>
@@ -1445,7 +1456,10 @@
 <h3 id="check-number-of-columns-and-rows">Check number of columns and rows</h3>
 <ul>
   <li>Excel has (had) a maximum of 65,536 rows. If your dataset has 65,536 rows, you likely have a portion of the data. Go back to the source to confirm or request the full dataset.</li>
-  <li>Apple’s Numbers can only handle 255 columns. If 255 rows, you might only have a portion of the data. Go back to the source to confirm or request the full dataset.</li>
+  <li>
+    <p>Apple’s Numbers can only handle 255 columns. If 255 rows, you might only have a portion of the data. Go back to the source to confirm or request the full dataset.</p>
+  </li>
+  <li><small>💻</small>To fix: Confirm by opening the CSV in Sublime Text or Atom that there are more than the maximum number of values.</li>
 </ul>
 
 <h3 id="check-for-these-suspicious-values">Check for these suspicious values</h3>
@@ -1495,14 +1509,14 @@
 <ul>
   <li><small>🔗</small> <a href="https://github.com/Quartz/bad-data-guide">Quartz’s full Bad Data Guide</a></li>
   <li><small>🔗</small> <a href="https://github.com/propublica/guides/blob/master/data-bulletproofing.md">ProPublica’s Bulletproofing Your Data Guide</a></li>
+  <li><small>🔗</small> <a href="https://github.com/propublica/guides/blob/master/news-apps.md">ProPublica’s NewsApps style guide Guide</a></li>
 </ul>
 
 <h1 id="exercise">Exercise:</h1>
 
 <!-- - <small>💻</small> Fix bad encoding. Using UFT-8. -->
+
 <ul>
-  <li><small>💻</small> Change dates to a consistent (DD-MM-YYYY) format.</li>
-  <li><small>💻</small> Adjust housing data to 2019 values using Bank of Canada calculator.</li>
   <li><small>💻</small> Use a Pivot Table or a filter to find the rows where a date is incorrectly recorded as <code>January 1st, 1904</code>.</li>
 </ul>
 
@@ -1542,6 +1556,45 @@
     </ul>
   </li>
 </ol>
+
+<h3 id="exercise-1">Exercise</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Questions to ask your data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Are there missing or truncated values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Are there out of range values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Look at all the values that appear in a column/row – do they make sense?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Are there similar repeated values?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Is the data format what you would expect for the data type?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">How was the data collected? Is it from a survey (survey – online survey vs. phone calls)?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">How was the data verified? If data is entered by hand by a human person, how was it verified?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">When was the data collected?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">What is the gap between being collected and published? ie., there will always be a lag between when census data is collected from Canadians and when it is made available (to download/access)</td>
+    </tr>
+  </tbody>
+</table>
 
 	</section>
 </div>
