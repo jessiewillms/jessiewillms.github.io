@@ -1227,13 +1227,20 @@
 
 <p><img src="vlookup_solution/isna.gif" alt="IF" /></p>
 
-<p>We can continue to wrap and build out this function to return other values from the same row.</p>
+<p>We can continue to add to this function to return multiple values from the same row.</p>
 
-<p>For example, we can check that are artist is on the highest attended concerts list, then return the date of the show, the city, and how many tickets were sold.</p>
+<p>For example, we can wrap the index of columns in <code>{}</code> to return many values.</p>
 
 <p>This is what the function will look like:</p>
 
-<pre><code>=IF( ISNA( VLOOKUP(B2, highest_attended_concerts!A2:G25, 1, false)), "NOT on the list", VLOOKUP(B2, highest_attended_concerts!A2:G25, 3, false))
+<pre><code>=ArrayFormula(VLOOKUP(B2, highest_attended_concerts!A2:G25, {1, 5, 6, 7}, false))
+</code></pre>
+
+<p>This function will return city, tour name, and number of people in attendance. Using <code>IF</code>/<code>ISNA</code> functions, we can return many values where there is a match, and a string “Not on the list” otherwise.</p>
+
+<p>This is what the function will look like:</p>
+
+<pre><code>=IF( ISNA(ArrayFormula(VLOOKUP(B2, highest_attended_concerts!A2:G25, {1, 5, 6}, false))), "Not on the list", ArrayFormula(VLOOKUP(B2, highest_attended_concerts!A2:G25, {1, 5, 6}, false)))
 </code></pre>
 
 <p><img src="vlookup_solution/many-functions-many-returns.png" alt="Many function many retunrs" /></p>
