@@ -1109,34 +1109,31 @@
 
 <div class="wrapper">
 	<section class="lessonList">
-<h1 id="cleaning-data">Cleaning data</h1>
+<h1 id="cleaning-data-using-ontarios-art-collection">Cleaning data using Ontario’s art collection</h1>
 
-<ol>
-  <li>Download the data about Ontario’s art collection</li>
-  <li>Complete the following data work:
+<ul>
+  <li><strong>Optional:</strong> Create a new column, has it <code>has_error</code>. When you identify (and correct) an error in a row, use this column to indicate the artwork contained an error (use Data Validation and TRUE/FALSE values). When you are finished, calculate the number of rows that contain errors. What is that expressed as a percent?</li>
+  <li>Create a Pivot Table to find the repeated row (based on the title of the artwork). Which artwork or pieces of artwork is repeated?</li>
+  <li>Create a Pivot Table to find the number of artists in the data (<code>COUNTUNIQUE</code>). How many artists are in the data? Create a new Pivot Table to find the artist with the most pieces of art listed.</li>
+  <li>Create a Pivot Table to find the number of pieces of artwork where the date is missing or unclear (ie., a range of dates or no date is provided). What is this expressed as a percent?</li>
+  <li>Create a Pivot Table and <code>COUNTUNIQUE</code> to find the number of categories. How many categories are there?
     <ul>
-      <li>Optional: Create a new column, has it <code>has_error</code>. When you identify (and correct) an error in a row, use this column to indicate the artwork contained an error (use Data Validation and TRUE/FALSE values). When you are finished, calculate the number of rows that contain errors. What is that expressed as a percent?</li>
-      <li>Create a Pivot Table to find the repeated row (based on the title of the artwork). Which artwork or pieces of artwork is repeated?</li>
-      <li>Create a Pivot Table to find the number of artists in the data (<code>COUNTUNIQUE</code>). How many artists are in the data? Create a new Pivot Table to find the artist with the most pieces of art listed.</li>
-      <li>Create a Pivot Table to find the number of pieces of artwork where the date is missing or unclear (ie., a range of dates or no date is provided). What is this expressed as a percent?</li>
-      <li>Create a Pivot Table and <code>COUNTUNIQUE</code> to find the number of categories. How many categories are there?
-        <ul>
-          <li>Use the <code>TRIM()</code> function to remove the whitespace, and <code>find and replace</code> to correct errors (typos) in the categories. (There should be 11 categories)</li>
-        </ul>
-      </li>
-      <li>How many pieces of artwork are untitled (either the full title is “Untitled” or the title contains the text “Untitled”)? How many of these untitled pieces are the maquette (a maquette being the sculptor’s preliminary model/sketch)?</li>
-      <li>Clean up the title column so that: the title of any <code>untitled</code> piece lives two columns of data — the value <code>Untitled</code> in one column, and the <code>[maquette]</code> value in a second column. Use find and replace to remove any extra round/square brackets (<code>]</code> or <code>)</code>)</li>
-      <li>Look for this special character: <code>�</code>; apply conditional to visually show every cell that contains this character</li>
-      <li>Use conditional formatting to highlight cells in the <code>Date</code> column that are true numbers (you will need a <code>Custom formula if</code> rule and the function <code>ISNUMBER</code> applied to a range of data)</li>
-      <li>Use conditional formatting to highlight cells in the <code>AC#</code> column that are  not true numbers</li>
-      <li>Use conditional formatting to highlight duplicates (<code>Format</code> &gt; <code>Conditional formatting</code> &gt; <code>Custom formula is</code> &gt; <code>=COUNTIF(A:A,A1)&gt;1</code>)</li>
-      <li>Reformat the <code>Title</code> column so artist names are FirstName, LastName</li>
-      <li>Reformat the <code>Title</code> column so artist names are Title Case</li>
-      <li>Use <code>find and replace</code> to replace <code>n.d.</code> with <code>null</code></li>
-      <li>Clean up the <code>Date</code> column. Each cell in the column should contain a single value. Replace any unknown or unclear values with <code>null</code></li>
+      <li>Use the <code>TRIM()</code> function to remove the whitespace, and <code>find and replace</code> to correct errors (typos) in the categories. (There should be 11 categories)</li>
     </ul>
   </li>
-</ol>
+  <li>How many pieces of artwork are untitled (either the full title is “Untitled” or the title contains the text “Untitled”)? How many of these untitled pieces are the maquette (a maquette being the sculptor’s preliminary model/sketch)?</li>
+  <li>Clean up the title column so that: the title of any <code>untitled</code> piece lives two columns of data — the value <code>Untitled</code> in one column, and the <code>[maquette]</code> value in a second column. Use find and replace to remove any extra round/square brackets (<code>]</code> or <code>)</code>)</li>
+  <li>Look for this special character: <code>�</code>; apply conditional to visually show every cell that contains this character</li>
+  <li>Use conditional formatting to highlight cells in the <code>Date</code> column that are true numbers (you will need a <code>Custom formula if</code> rule and the function <code>ISNUMBER</code> applied to a range of data)</li>
+  <li>Use conditional formatting to highlight cells in the <code>AC#</code> column that are  not true numbers</li>
+  <li>Use conditional formatting to highlight duplicates (<code>Format</code> &gt; <code>Conditional formatting</code> &gt; <code>Custom formula is</code> &gt; <code>=COUNTIF(A:A,A1)&gt;1</code>)</li>
+  <li>Reformat the <code>Title</code> column so artist names are FirstName, LastName</li>
+  <li>Reformat the <code>Title</code> column so artist names are Title Case</li>
+  <li>Use <code>find and replace</code> to replace <code>n.d.</code> with <code>null</code></li>
+  <li>Clean up the <code>Date</code> column. Each cell in the column should contain a single value. Replace any unknown or unclear values with <code>null</code></li>
+</ul>
+
+<h5 id="you-will-use-some-of-this-data-to-build-charts-in-this-exercisehttpsjessiewillmsgithubiocjrl713notes4visualizingdata0110rulesfordatavizhtml--">You will use some of this data to build charts <a href="https://jessiewillms.github.io/CJRL_713/notes/4_visualizing_data/01_10_rules_for_data_viz.html">in this exercise</a>. 📈 📊</h5>
 
 <p><strong>YOUR GROUPS</strong><br />
 <a href="group-project-assigner-section-1.html">Section 1</a><br />
