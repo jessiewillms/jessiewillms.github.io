@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title> Data viz!!! </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="main.css">
+
+	<!-- <link rel="stylesheet" href="https://www.theglobeandmail.com/files/editorial/data-training/assets/main.css"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<style media="screen">
+		.tbls tbody td:nth-of-type(1) {
+			width: 40%;
+		}
+		.tbls tbody td:nth-of-type(2) {
+			width: 60%;
+		}
+
+		section.lesson img {
+		    text-align: center;
+		    margin: 0 auto;
+		    max-width: 95%;
+		    display: block;
+		}
+
+		.border {
+			    border: 2px solid #EFEFED;
+		}
+
+		.markdown-body img {
+	    	border: none;
+		}
+	</style>
+
+  <link rel="canonical" href="/6_tk/data_viz.html">
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="stickNav">
+    <h1 class="site-title"></h1>
+  </div>
+  <div class="wrapper">
+    <div class="container">
+      <h3>
+        <a href=""></a>
+      </h3>
+      <h2>Data viz</h2>
+    </div>
+  </div>
+</header>
+
+
+<div class="back-link">
+  <a href="/" class="toc">&#9664; Table of contents</a>
+</div>
+
+
+
+<style>
+
+</style>
+
+<div class="wrapper">
+	<section class="lesson markdown-body">
+<!-- ## What's a data viz? -->
+
+<h2 id="definitions">Definitions</h2>
+
+<h4 id="what-is-data-visualization">What is “data visualization”?</h4>
+
+<p><em>Data visualizations any effort to help people understand the significance of data by placing it in a visual context.</em></p>
+
+<ul>
+  <li>data visualization is the work of turning data into visuals</li>
+  <li>making stuff to add clarity when you have a lot of, or very complex data</li>
+  <li>making number real for readers</li>
+</ul>
+
+<p><strong>This includes:</strong></p>
+
+<ul>
+  <li>📊 charts</li>
+  <li>📈 graphics</li>
+  <li>🗺 maps</li>
+  <li>💻 interactive databases</li>
+  <li>🎨 hand-drawn illustrations</li>
+</ul>
+
+<hr>
+
+<h3 id="what-did-it-look-like">What did it look like?</h3>
+
+<p><strong>In the 1850s, cholera was a mystery 🤒</strong></p>
+
+<ul>
+  <li>a physician, John Snow, made a “dot distribution map” of the outbreak in London</li>
+  <li>his map reveals that cases clustered around a public water pump</li>
+  <li>eventually, concluded that disease was spread by contaminated water</li>
+</ul>
+
+<p><img src="john-snow.jpg" alt="John Snow" /></p>
+
+<hr>
+
+<h3 id="what-does-it-look-like-now">What does it look like now?</h3>
+
+<p><strong>Now it looks like this:</strong></p>
+
+<p><strong>Trump’s Lies:</strong> NYT tracked every certifiable lie told by the president</p>
+
+<p><img src="trump_lies.gif" alt="Lies" /></p>
+
+<hr />
+
+<p><strong>Gender pay gap:</strong> The Guardian looks at the calendar day when companies, in effect, stop paying women</p>
+
+<p><img src="pay_gap.png" alt="Lies" /></p>
+
+<hr />
+
+<p><strong>Age of Olympic athletes:</strong> FiveThirtyEight breaks down the average age of Olympic athletes by sport (“old Olympians ride horses; young ones do flips”)</p>
+
+<p><img src="olympics.png" alt="Olympics" /></p>
+
+<p><strong>Something these all have in common</strong></p>
+
+<ul>
+  <li>🤓 precision, accuracy</li>
+  <li>🔎 clear analysis, fits with rest of reporting</li>
+  <li>but: tbh…can a little cold</li>
+</ul>
+
+<hr>
+
+<h3 id="but-it-can-also-look-like-">But it can also look like …</h3>
+
+<p>If the point of data visualization is to remove the work from understanding and interpreting data for people, then data visualization can also look like something made by a person.</p>
+
+<p><strong>Some examples:</strong></p>
+
+<p><strong>Mona Chalabi:</strong> @monachalabi (IG/Twitter)</p>
+
+<p><img src="dogs.png" alt="Mona" /></p>
+
+<p><img src="mona.jpg" alt="Mona" /></p>
+
+<hr />
+
+<p><strong>Dear Data:</strong> @_deardata</p>
+
+<p><img src="week_laughs.png" alt="Dear Data" /></p>
+
+<p><img src="week_laughs2.png" alt="Dear Data" /></p>
+
+<hr />
+
+<p><strong>Jose Duarte:</strong> data visualizations in the wild</p>
+
+<p><img src="internet.jpg" alt="Internet" /></p>
+
+<hr />
+
+<p><strong>Dima Yarovinsky:</strong> Visualization of the terms and conditions for different apps</p>
+
+<p><img src="terms_conditions.jpg" alt="Terms and conditions" /></p>
+
+<hr>
+
+<h3 id="we-should-talk-quickly-about-data">We should talk quickly about <code>data</code></h3>
+
+<ul>
+  <li>data can be a collection of almost anything</li>
+  <li>data can be found in:
+    <ul>
+      <li>city budgets</li>
+      <li>regional test scores</li>
+      <li>financial data</li>
+    </ul>
+  </li>
+  <li>data can also be found in your daily life:
+    <ul>
+      <li>the length and mode of your morning commute</li>
+      <li>the timing of your daily coffee intake</li>
+      <li>the songs you listened to on Spotify</li>
+    </ul>
+  </li>
+  <li>we record data, often, in spreadsheet
+    <ul>
+      <li>each row (across) is a data point, one thing</li>
+      <li>each column (up/down) is a category, a variable, a bucket</li>
+      <li>the first row: a “column header” – the labels that describe what each column contains</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3 id="how-do-we-create-data-visualizations">How do we create data visualizations?</h3>
+
+<p><strong>The process:</strong></p>
+
+<ul>
+  <li>🤔 start with a focusing question</li>
+  <li>📓 collect + analyze</li>
+  <li>📝 sketch some ideas</li>
+  <li>🎨 create something cool (😎)</li>
+</ul>
+
+<p>🤔 Data visualizations can start anywhere. <strong>But the best place to start is with a question.</strong></p>
+
+<ul>
+  <li>How much money did the city of Toronto spend on pop-up shelters this winter?</li>
+  <li>What school in Ontario had the lowest score on standardized testing over the last decade?</li>
+  <li>What genre of music do I listen to most?</li>
+  <li>What’s the gender breakdown of my most played tracks?</li>
+</ul>
+
+<p>📓 Build a dataset using data from your life</p>
+
+<ul>
+  <li>each row is one data point</li>
+  <li>for example, one song or cup of coffee</li>
+  <li>populate your sheet (up to 10 rows)</li>
+</ul>
+
+<p>…here’s what my data looks like:</p>
+
+<p><img src="plylst.png" alt="My data" /></p>
+
+<p>…and here’s what it looks like in a table</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">title</th>
+      <th style="text-align: left">artist_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TEMPTATION</td>
+      <td style="text-align: left">Joey Bada$$</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Rush</td>
+      <td style="text-align: left">Lewis Capaldi feat. Jessie Reyez</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Too Many Colors</td>
+      <td style="text-align: left">Twin Shadow</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Lost</td>
+      <td style="text-align: left">Dermot Kennedy</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Back In My Body</td>
+      <td style="text-align: left">Maggie Rogers</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">For Island Fires and Family</td>
+      <td style="text-align: left">Dermot Kennedy</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Peaks &amp; Valleys</td>
+      <td style="text-align: left">Dan Mangan</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The King</td>
+      <td style="text-align: left">Matt Holubowski</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">My Backwards Walk</td>
+      <td style="text-align: left">Frightened Rabbit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Dancing With Our Hands Tied</td>
+      <td style="text-align: left">Taylor Swift</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Call</td>
+      <td style="text-align: left">Backstreet Boys</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is a great place to start.</p>
+
+<p>I have rows, I have columns. But in order to visualize this data in any meaningful way, I need more information about each song. I need attributes.</p>
+
+<p><strong>🔎 What are some other pieces of data I might collect?</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">title</th>
+      <th style="text-align: left">artist_name</th>
+      <th style="text-align: left">release_date</th>
+      <th style="text-align: left">gender_of_artist</th>
+      <th style="text-align: left">genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">TEMPTATION</td>
+      <td style="text-align: left">Joey Bada$$</td>
+      <td style="text-align: left">2017</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">hip hop</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Rush</td>
+      <td style="text-align: left">Lewis Capaldi feat. Jessie Reyez</td>
+      <td style="text-align: left">2018</td>
+      <td style="text-align: left">MALE, FEMALE</td>
+      <td style="text-align: left">pop</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Too Many Colors</td>
+      <td style="text-align: left">Twin Shadow</td>
+      <td style="text-align: left">2018</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">chillwave</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Lost</td>
+      <td style="text-align: left">Dermot Kennedy</td>
+      <td style="text-align: left">2019</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">new folk</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Back In My Body</td>
+      <td style="text-align: left">Maggie Rogers</td>
+      <td style="text-align: left">2019</td>
+      <td style="text-align: left">FEMALE</td>
+      <td style="text-align: left">pop</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">For Island Fires and Family</td>
+      <td style="text-align: left">Dermot Kennedy</td>
+      <td style="text-align: left">2019</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">new folk</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Peaks &amp; Valleys</td>
+      <td style="text-align: left">Dan Mangan</td>
+      <td style="text-align: left">2018</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">indie</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The King</td>
+      <td style="text-align: left">Matt Holubowski</td>
+      <td style="text-align: left">2016</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">folk</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">My Backwards Walk</td>
+      <td style="text-align: left">Frightened Rabbit</td>
+      <td style="text-align: left">2007</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">folk</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Dancing With Our Hands Tied</td>
+      <td style="text-align: left">Taylor Swift</td>
+      <td style="text-align: left">2017</td>
+      <td style="text-align: left">FEMALE</td>
+      <td style="text-align: left">pop</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Call</td>
+      <td style="text-align: left">Backstreet Boys</td>
+      <td style="text-align: left">2000</td>
+      <td style="text-align: left">MALE</td>
+      <td style="text-align: left">pop</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>📝 Now, take a sheet of paper, folder it into quarters.</p>
+
+<p>Start with some questions for the data:</p>
+
+<ul>
+  <li>What genre shows up most often? (How can I represent this genre?)</li>
+  <li>What is the distribution of years these songs were released? (What’s the most popular year/decade)</li>
+  <li>What % of artists are female? (How can I represent gender in music?)</li>
+</ul>
+
+<p>Try to answer a question. Try to think of four different ways to visualize your data.</p>
+
+<p>[ INSERT SKETCH ]</p>
+
+<p>🎨 Pick your favorite sketch. Expand it to a full concept.</p>
+
+<p><strong>🔎 What did you make? And what did it reveal about your data?</strong></p>
+
+	</section>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/assets/highlight.min-fb9e5b69ffb15bd46fe104224a530c4f.js"></script>
+<script src="/assets/app-23b3b230a717622ee901b91eaa8647e8.js"></script>
+
+
+
+
+</body>
+</html>
